@@ -1,0 +1,29 @@
+.pageSelectorContainer {
+  display: flex;
+
+  button {
+    font-weight: bold;
+
+    &.pageSelectorLeft {
+      border-radius: 5px 0px 0px 5px;
+    }
+    &.pageSelectorRight {
+      border-radius: 0px 5px 5px 0px;
+    }
+  }
+
+  .pageSelectorInput {
+    max-width: 50px;
+    text-align: center;
+  }
+
+  .pageSelectorMaxPages {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px 0px 5px;
+
+    color: #fff;
+  }
+}
