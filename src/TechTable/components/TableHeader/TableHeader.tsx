@@ -10,9 +10,9 @@ interface TableHeaderProps {
 function TableHeader({ getFn, isSearching }: TableHeaderProps) {
   return (
     <div className={css.headerContainer}>
-      <div className={css.headerTitle}>
-        <span className={css.titleAppName}>Мир Танков</span>
-        <span className={css.titlePageName}>Танкопедия</span>
+      <div className={css.headerContainer__title}>
+        <span className={css.headerContainer__title__name}>Мир Танков</span>
+        <span className={css.headerContainer__title__pageName}>Танкопедия</span>
       </div>
       <SearchBlock getFn={getFn} isSearching={isSearching} />
     </div>

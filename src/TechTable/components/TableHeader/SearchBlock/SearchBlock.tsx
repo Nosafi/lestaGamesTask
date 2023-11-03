@@ -13,10 +13,10 @@ function SearchBlock({ getFn, isSearching }: SearchBlockProps) {
 
   return (
     <div className={css.searchBlockContainer}>
-      <span className={css.searchBlockText}>Найди свой танк:</span>
-      <div className={css.searchBlockInputContainer}>
+      <span className={css.searchBlockContainer__text}>Найди свой танк:</span>
+      <div className={css.searchBlockContainer__inputContainer}>
         <input
-          className={css.searchBlockInput}
+          className={css.searchBlockContainer__inputContainer__input}
           type="text"
           value={currTankName}
           onChange={(e) => {
@@ -25,7 +25,7 @@ function SearchBlock({ getFn, isSearching }: SearchBlockProps) {
         ></input>
         {currTankName !== "" && (
           <button
-            className={css.searchBlockReset}
+            className={css.searchBlockContainer__inputContainer__resetButton}
             onClick={() => {
               setCurrTankName("");
               if (isSearching) getFn("");
@@ -36,7 +36,7 @@ function SearchBlock({ getFn, isSearching }: SearchBlockProps) {
         )}
       </div>
       <button
-        className={css.searchBlockSearch}
+        className={css.searchBlockContainer__searchButton}
         onClick={() => {
           getFn(currTankName);
         }}

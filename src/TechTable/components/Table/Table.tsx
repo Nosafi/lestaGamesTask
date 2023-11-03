@@ -10,16 +10,16 @@ interface TableProps {
 function Table({ data, setTankDetailId }: TableProps) {
   if (!data || Object.keys(data).length <= 0)
     return (
-      <div className={css.tableContainer}>
-        <div className={css.errorContainer}>
+      <div className={css.container}>
+        <div className={css.container__error}>
           Данных нет. Проверьте правильность заполнения всех полей.
         </div>
       </div>
     );
 
   return (
-    <div className={css.tableContainer}>
-      <table className={css.table}>
+    <div className={css.container}>
+      <table className={css.container__table}>
         <thead>
           <tr>
             <th>Нация</th>

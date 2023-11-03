@@ -19,15 +19,18 @@ function LimitSelector({
 
   return (
     <div className={css.limitSelectorContainer}>
-      <span className={css.limitSelectorText}>На странице: </span>
+      <span className={css.limitSelectorContainer__text}>На странице: </span>
       <input
-        className={css.limitSelectorInput}
+        className={css.limitSelectorContainer__input}
         type="text"
         value={tanksOnPage}
         placeholder="1-100"
         onChange={(e) => limitChanger(e.target.value)}
       />
-      <button className={css.limitSelectorButton} onClick={() => getData()}>
+      <button
+        className={css.limitSelectorContainer__button}
+        onClick={() => getData()}
+      >
         Ok
       </button>
     </div>

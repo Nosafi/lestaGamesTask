@@ -38,7 +38,7 @@ function TankDetailModal({
       }}
     >
       <div
-        className={css.modalContent}
+        className={css.tankDetailModal__content}
         onClick={(e) => {
           e.stopPropagation();
         }}
@@ -52,25 +52,27 @@ function TankDetailModal({
 
               return (
                 <>
-                  <div className={css.tankModalHeader}>
+                  <div className={css.tankDetailModal__content__header}>
                     <span>{currTank.name}</span>
                     <span
-                      className={css.tankModalClodeBtn}
+                      className={css.tankDetailModal__content__header__closeBtn}
                       onClick={() => modalCloser()}
                     >
                       &times;
                     </span>
                   </div>
-                  <div className={css.tankModalBody}>
-                    <div className={css.tankModalBodyImgBlock}>
+                  <div className={css.tankDetailModal__content__body}>
+                    <div className={css.tankDetailModal__content__body__img}>
                       <img src={currTank.images.big_icon} alt="tankImg" />
                     </div>
-                    <div className={css.tankModalBodyContent}>
+                    <div
+                      className={css.tankDetailModal__content__body__content}
+                    >
                       <p>Уровень танка: {currTank.tier}</p>
                       <p>{currTank.description}</p>
                     </div>
                   </div>
-                  <div className={css.tankModalFooter}>
+                  <div className={css.tankDetailModal__content__footer}>
                     Сделано Дубовиком А.А. Тестовое задание для Lesta Games.
                     2023г.
                   </div>

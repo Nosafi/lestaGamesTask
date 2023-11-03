@@ -1,5 +1,5 @@
-.tableContainer {
-  .errorContainer {
+.container {
+  &__error {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,7 +8,7 @@
     color: #fa0;
   }
 
-  .table {
+  &__table {
     width: 100%;
     border: none;
     margin-bottom: 20px;
@@ -80,7 +80,7 @@
   }
 }
 @media screen and (max-width: 900px) {
-  .tableContainer {
+  .container {
     overflow: scroll;
   }
 }

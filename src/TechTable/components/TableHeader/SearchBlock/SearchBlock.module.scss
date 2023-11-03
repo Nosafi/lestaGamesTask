@@ -2,22 +2,22 @@
   display: flex;
   align-items: center;
 
-  .searchBlockText {
+  &__text {
     color: #fff;
     font-size: 16px;
     font-weight: lighter;
     margin-right: 5px;
   }
 
-  .searchBlockInputContainer {
+  &__inputContainer {
     position: relative;
 
-    .searchBlockInput {
+    &__input {
       max-width: 200px;
       border-radius: 5px 0px 0px 5px;
     }
 
-    .searchBlockReset {
+    &____resetButton {
       background-color: transparent;
       border: none;
       color: #fff;
@@ -29,7 +29,7 @@
     }
   }
 
-  .searchBlockSearch {
+  &__searchButton {
     width: 36px;
     border-radius: 0px 5px 5px 0px;
 

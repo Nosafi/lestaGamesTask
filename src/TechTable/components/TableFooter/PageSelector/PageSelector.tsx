@@ -15,9 +15,9 @@ function PageSelector({ currPage, setCurrPage, maxPages }: PageSelectorProps) {
 
   return (
     <div className={css.pageSelectorContainer}>
-      <div className={css.pageSelectorMaxPages}>Страница </div>
+      <div className={css.pageSelectorContainer__pagesText}>Страница </div>
       <button
-        className={css.pageSelectorLeft}
+        className={css.pageSelectorContainer__button_left}
         onClick={() => {
           setCurrPage((prew: String) => {
             const newState = +prew - 1;
@@ -29,7 +29,7 @@ function PageSelector({ currPage, setCurrPage, maxPages }: PageSelectorProps) {
         {"<"}
       </button>
       <input
-        className={css.pageSelectorInput}
+        className={css.pageSelectorContainer__input}
         type="text"
         value={currPage}
         placeholder={"1-" + maxPages}
@@ -38,14 +38,17 @@ function PageSelector({ currPage, setCurrPage, maxPages }: PageSelectorProps) {
         }}
       />
       <button
-        className={css.pageSelectorRight}
+        className={css.pageSelectorContainer__button_right}
         onClick={() => {
           setCurrPage((prew: String) => (+prew + 1).toString());
         }}
       >
         {">"}
       </button>
-      <div className={css.pageSelectorMaxPages}> из {maxPages}.</div>
+      <div className={css.pageSelectorContainer__pagesText}>
+        {" "}
+        из {maxPages}.
+      </div>
     </div>
   );
 }
