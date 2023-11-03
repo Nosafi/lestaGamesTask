@@ -54,12 +54,23 @@ function useTankData() {
     }
   };
 
+  const getTankDetails = async (tankId: string) => {
+    setIsLoading(true);
+    let res = await axios.get(
+      "https://api.tanki.su/wot/encyclopedia/vehicles/?application_id=2b0adae8aa6efcbaf9abba08c10e8a3d&fields=name,images.big_icon,description,images.big_icon,tier&tank_id=" +
+        tankId
+    );
+    setIsLoading(false);
+    return res.data;
+  };
+
   return {
     isLoading,
     isSearching,
     data,
     getDataFromApi,
     getSoloTank,
+    getTankDetails,
   };
 }
 
