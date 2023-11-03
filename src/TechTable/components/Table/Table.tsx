@@ -66,7 +66,7 @@ function Table({ data, setTankDetailId }: TableProps) {
                 </td>
                 <td>{currTank.default_profile.hp}</td>
                 <td className={css.tableDescSell}>
-                  {currTank.description.substr(0, 100)}...
+                  {currTank.description.substring(0, 100)}...
                 </td>
                 <td>{currTank.price_credit}</td>
               </tr>

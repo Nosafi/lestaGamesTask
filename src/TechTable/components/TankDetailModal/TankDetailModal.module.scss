@@ -73,4 +73,10 @@
       font-weight: lighter;
     }
   }
+
+  @media screen and (max-width: 900px) {
+    .modalContent {
+      width: 95%;
+    }
+  }
 }

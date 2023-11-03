@@ -7,6 +7,9 @@ function useTankData() {
   const [isSearching, setIsSearching] = useState<boolean>(true);
   const [data, setData] = useState<TankData>();
 
+  /**
+   * Get data from to display in the table. Taking with the page and number of tanks.
+   */
   const getDataFromApi = (tanksLimit = "25", pageNum = "1") => {
     setIsLoading(true);
     setIsSearching(false);
@@ -24,7 +27,11 @@ function useTankData() {
       });
   };
 
+  /**
+   * Function to search for a tank by name.
+   */
   const getSoloTank = (tankName: string) => {
+    //I couldn’t find this function in the api, I had to come up with it myself
     if (tankName === "") {
       getDataFromApi();
     } else {
@@ -54,6 +61,9 @@ function useTankData() {
     }
   };
 
+  /**
+   *   Get data on a specific tank by its ID.
+   */
   const getTankDetails = async (tankId: string) => {
     setIsLoading(true);
     let res = await axios.get(
