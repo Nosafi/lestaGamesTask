@@ -23,6 +23,17 @@ export default interface TankInnerData {
   };
 }
 
+export default interface TankDetailData {
+  [key: string]: {
+    tier: number;
+    images: {
+      big_icon: string;
+    };
+    description: string;
+    name: string;
+  };
+}
+
 export default interface TankDataError {
   field: string;
   message: string;
@@ -35,4 +46,8 @@ export default interface TankData {
   meta?: TankDataMeta;
   data?: TankInnerData;
   error?: TankDataError;
+}
+
+export default interface TankDetail extends TankData {
+  data?: TankInnerData;
 }

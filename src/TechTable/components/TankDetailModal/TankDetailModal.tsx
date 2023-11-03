@@ -2,7 +2,7 @@ import css from "./TankDetailModal.module.scss";
 
 import useTankData from "../../hooks/useTankData";
 import { useEffect, useState } from "react";
-import TankData from "../../types/techTypes";
+import TankDetail from "../../types/techTypes";
 import Loader from "../Loader/Loader";
 
 interface TankDetailModalProps {
@@ -19,7 +19,7 @@ function TankDetailModal({
   };
 
   const { isLoading, getTankDetails } = useTankData();
-  const [tankDetails, setTankDetails] = useState<TankData>();
+  const [tankDetails, setTankDetails] = useState<TankDetail>();
 
   useEffect(() => {
     const getData = async () => {

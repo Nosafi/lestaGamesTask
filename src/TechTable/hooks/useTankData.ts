@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TankData from "../types/techTypes";
+import TankDetail from "../types/techTypes";
 import axios from "axios";
 
 function useTankData() {
@@ -14,7 +15,7 @@ function useTankData() {
     setIsLoading(true);
     setIsSearching(false);
     axios
-      .get(
+      .get<TankData>(
         "https://api.tanki.su/wot/encyclopedia/vehicles/?application_id=2b0adae8aa6efcbaf9abba08c10e8a3d&" +
           "fields=nation,images.small_icon,name,type,default_profile.hp,description,price_credit,tank_id&limit=" +
           tanksLimit +
@@ -38,7 +39,7 @@ function useTankData() {
       setIsLoading(true);
       setIsSearching(true);
       axios
-        .get(
+        .get<TankData>(
           "https://api.tanki.su/wot/encyclopedia/vehicles/?application_id=2b0adae8aa6efcbaf9abba08c10e8a3d&" +
             "fields=nation,images.small_icon,name,type,default_profile.hp,description,price_credit,tank_id"
         )
@@ -64,7 +65,7 @@ function useTankData() {
   /**
    *   Get data on a specific tank by its ID.
    */
-  const getTankDetails = async (tankId: string) => {
+  const getTankDetails = async (tankId: string): Promise<TankDetail> => {
     setIsLoading(true);
     let res = await axios.get(
       "https://api.tanki.su/wot/encyclopedia/vehicles/?application_id=2b0adae8aa6efcbaf9abba08c10e8a3d&fields=name,images.big_icon,description,images.big_icon,tier&tank_id=" +
