@@ -17,7 +17,7 @@
       border-radius: 5px 0px 0px 5px;
     }
 
-    &____resetButton {
+    &__resetButton {
       background-color: transparent;
       border: none;
       color: #fff;
@@ -26,6 +26,10 @@
       position: absolute;
       top: 0px;
       right: 0px;
+
+      &:hover {
+        background-color: transparent;
+      }
     }
   }
 

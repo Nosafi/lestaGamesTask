@@ -6,6 +6,9 @@ interface LimitSelectorProps {
   getData: () => void;
 }
 
+/**
+ * Component for setting count of elements on page.
+ */
 function LimitSelector({
   tanksOnPage,
   setTanksOnPage,
@@ -18,16 +21,21 @@ function LimitSelector({
   };
 
   return (
-    <div className={css.limitSelectorContainer}>
+    <div
+      className={css.limitSelectorContainer}
+      data-testid="limit-selector-container"
+    >
       <span className={css.limitSelectorContainer__text}>На странице: </span>
       <input
         className={css.limitSelectorContainer__input}
+        data-testid="limit-selector-container-input"
         type="text"
         value={tanksOnPage}
         placeholder="1-100"
         onChange={(e) => limitChanger(e.target.value)}
       />
       <button
+        data-testid="limit-selector-container-button"
         className={css.limitSelectorContainer__button}
         onClick={() => getData()}
       >

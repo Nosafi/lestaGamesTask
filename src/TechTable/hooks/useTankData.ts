@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TankData from "../types/techTypes";
-import TankDetail from "../types/techTypes";
+import TankDetail from "../types/TankDetail";
 import axios from "axios";
 
 function useTankData() {

@@ -9,6 +9,9 @@ import { useEffect, useState } from "react";
 import css from "./TechTable.module.scss";
 import TankDetailModal from "./components/TankDetailModal/TankDetailModal";
 
+/**
+ * Main component, wich contains all other needed component.
+ */
 function TechTable() {
   const { isLoading, data, getDataFromApi, getSoloTank, isSearching } =
     useTankData();
@@ -19,7 +22,7 @@ function TechTable() {
   }, []);
 
   return (
-    <div className={css.tableContainer}>
+    <div className={css.tableContainer} data-testid="table-container">
       <TableHeader getFn={getSoloTank} isSearching={isSearching} />
       {isLoading ? (
         <Loader />

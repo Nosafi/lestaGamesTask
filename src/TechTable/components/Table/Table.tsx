@@ -1,12 +1,15 @@
 import css from "./Table.module.scss";
 
-import TankInnerData from "../../types/techTypes";
+import TankInnerData from "../../types/TankInnerData";
 
 interface TableProps {
-  data: TankInnerData;
+  data: TankInnerData | undefined;
   setTankDetailId: React.Dispatch<React.SetStateAction<string>>;
 }
 
+/**
+ * Component for displaying main table with tanks info.
+ */
 function Table({ data, setTankDetailId }: TableProps) {
   if (!data || Object.keys(data).length <= 0)
     return (
@@ -18,8 +21,8 @@ function Table({ data, setTankDetailId }: TableProps) {
     );
 
   return (
-    <div className={css.container}>
-      <table className={css.container__table}>
+    <div className={css.container} data-testid="table-container">
+      <table className={css.container__table} data-testid="table">
         <thead>
           <tr>
             <th>Нация</th>
@@ -39,6 +42,8 @@ function Table({ data, setTankDetailId }: TableProps) {
 
             return (
               <tr
+                key={"tank-row-" + item}
+                data-testid="table-row"
                 onClick={() => {
                   setTankDetailId(currTank.tank_id.toString());
                 }}

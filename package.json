@@ -43,5 +43,10 @@
   },
   "devDependencies": {
     "sass": "^1.69.5"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   }
 }

@@ -6,6 +6,9 @@ interface PageSelectorProps {
   maxPages: number | undefined;
 }
 
+/**
+ * Component for setting current page.
+ */
 function PageSelector({ currPage, setCurrPage, maxPages }: PageSelectorProps) {
   const pageChanger = (text: string) => {
     if (/^\d+$/.test(text) || text === "") {
@@ -14,10 +17,14 @@ function PageSelector({ currPage, setCurrPage, maxPages }: PageSelectorProps) {
   };
 
   return (
-    <div className={css.pageSelectorContainer}>
+    <div
+      className={css.pageSelectorContainer}
+      data-testid="page-selector-container"
+    >
       <div className={css.pageSelectorContainer__pagesText}>Страница </div>
       <button
         className={css.pageSelectorContainer__button_left}
+        data-testid="page-selector-container-button_left"
         onClick={() => {
           setCurrPage((prew: String) => {
             const newState = +prew - 1;
@@ -30,6 +37,7 @@ function PageSelector({ currPage, setCurrPage, maxPages }: PageSelectorProps) {
       </button>
       <input
         className={css.pageSelectorContainer__input}
+        data-testid="page-selector-container-input"
         type="text"
         value={currPage}
         placeholder={"1-" + maxPages}
@@ -39,6 +47,7 @@ function PageSelector({ currPage, setCurrPage, maxPages }: PageSelectorProps) {
       />
       <button
         className={css.pageSelectorContainer__button_right}
+        data-testid="page-selector-container-button_right"
         onClick={() => {
           setCurrPage((prew: String) => (+prew + 1).toString());
         }}

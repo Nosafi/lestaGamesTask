@@ -3,7 +3,7 @@ import css from "./TableFooter.module.scss";
 import PageSelector from "./PageSelector/PageSelector";
 import LimitSelector from "./LimitSelector/LimitSelector";
 
-import TankDataError from "../../types/techTypes";
+import TankDataError from "../../types/TankDataError";
 
 interface TableFooterProps {
   isPageError: TankDataError | undefined;
@@ -11,6 +11,9 @@ interface TableFooterProps {
   maxPages: number | undefined;
 }
 
+/**
+ * Footer container with simple logic of limits and pages.
+ */
 function TableFooter({ isPageError, getFn, maxPages }: TableFooterProps) {
   const [tanksOnPage, setTanksOnPage] = useState("25");
   const [currPage, setCurrPage] = useState("1");
@@ -44,7 +47,7 @@ function TableFooter({ isPageError, getFn, maxPages }: TableFooterProps) {
   }, [currPage]);
 
   return (
-    <div className={css.footerContainer}>
+    <div className={css.footerContainer} data-testid="footer-container">
       <PageSelector
         currPage={currPage}
         setCurrPage={setCurrPage}
